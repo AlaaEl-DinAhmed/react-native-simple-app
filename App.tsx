@@ -1,13 +1,16 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   console.log(Platform);
   return (
-    <SafeAreaView style={styles.droidSafeArea}>
-      <View>
-        <Text>Text here</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.droidSafeArea}>
+        <View>
+          <Text>Text here</Text>
+        </View>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
