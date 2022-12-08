@@ -4,6 +4,15 @@ module.exports = function (api) {
     presets: ['babel-preset-expo'],
     plugins: [
       [
+        'module-resolver',
+        {
+          root: ['./src'],
+          components: {
+            '@components': './src/components',
+          },
+        },
+      ],
+      [
         'module:react-native-dotenv',
         {
           envName: 'APP_ENV',
