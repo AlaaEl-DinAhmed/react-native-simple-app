@@ -1,19 +1,20 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { Props } from '../../interfaces/user';
 
-export function User() {
+export const User = ({ user }: { user: Props }) => {
   return (
     <View style={styles.user}>
       <Image
         source={{
-          uri: 'https://github.githubassets.com/images/modules/open_graph/github-mark.png',
+          uri: user.avatar_url,
         }}
         style={styles.user__image}
       />
-      <Text style={styles.user__name}>User</Text>
+      <Text style={styles.user__name}>{user.login}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   user: {
