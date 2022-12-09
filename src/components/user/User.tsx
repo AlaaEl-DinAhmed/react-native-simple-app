@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { Props } from '../../interfaces/user';
+import { IUser } from '../../interfaces/user';
 
-export const User = ({ user }: { user: Props }) => {
+export const User = ({ user }: { user: IUser }) => {
   return (
     <View style={styles.user}>
       <Image
