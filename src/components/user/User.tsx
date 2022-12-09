@@ -1,32 +1,49 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { IUser } from '../../interfaces/user';
 
 export const User = ({ user }: { user: IUser }) => {
   return (
-    <View style={styles.user}>
-      <Image
-        source={{
-          uri: user.avatar_url,
-        }}
-        style={styles.user__image}
-      />
-      <Text style={styles.user__name}>{user.login}</Text>
+    <View style={styles.container}>
+      <View style={styles.user}>
+        <Image
+          source={{
+            uri: user.avatar_url,
+          }}
+          style={styles.user__image}
+        />
+        <Text style={styles.user__name}>{user.login}</Text>
+      </View>
+      <Pressable>
+        <Image
+          source={require('../../../assets/baseline_arrow_right_alt_black_18.png')}
+        />
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  user: {
+  container: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 10,
+  },
+  user: {
+    borderBottomColor: '#eee',
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 7,
   },
   user__image: {
-    width: 100,
-    height: 100,
+    width: 65,
+    height: 65,
   },
   user__name: {
-    fontSize: 20,
-    marginStart: 20,
+    fontSize: 16,
+    marginStart: 15,
   },
 });
