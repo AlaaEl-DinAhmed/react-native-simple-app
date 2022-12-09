@@ -1,10 +1,14 @@
+import { Link } from '@react-navigation/native';
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { IUser } from '../../interfaces/user';
 
 export const User = ({ user }: { user: IUser }) => {
   return (
-    <View style={styles.container}>
+    <Link
+      to={{ screen: 'UserDetails', params: { id: user.id } }}
+      style={styles.container}
+    >
       <View style={styles.user}>
         <Image
           source={{
@@ -14,28 +18,19 @@ export const User = ({ user }: { user: IUser }) => {
         />
         <Text style={styles.user__name}>{user.login}</Text>
       </View>
-      <Pressable>
-        <Image
-          source={require('../../../assets/baseline_arrow_right_alt_black_18.png')}
-        />
-      </Pressable>
-    </View>
+    </Link>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     marginHorizontal: 10,
+    borderBottomColor: '#dad6d6',
+    borderBottomWidth: 1,
   },
   user: {
-    borderBottomColor: '#eee',
-    borderBottomWidth: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     paddingVertical: 7,
   },
   user__image: {
