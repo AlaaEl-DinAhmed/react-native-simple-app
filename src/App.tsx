@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Platform, SafeAreaView, StyleSheet } from 'react-native';
-import { Users } from './components/users/Users';
+import { Home } from './screens/Home/Home';
 
 const queryClient = new QueryClient();
 
@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
         <SafeAreaView style={styles.droidSafeArea}>
-          <Users />
+          <Home />
         </SafeAreaView>
       </QueryClientProvider>
     </NavigationContainer>
