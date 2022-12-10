@@ -6,7 +6,7 @@ import { IUser } from '../../interfaces/user';
 export const User = ({ user }: { user: IUser }) => {
   return (
     <Link
-      to={{ screen: 'UserDetails', params: { id: user.id } }}
+      to={{ screen: 'UserDetails', params: { login: user.login } }}
       style={styles.container}
     >
       <View style={styles.user}>
